@@ -4,11 +4,11 @@ An OpenAI API-compatible wrapper for Claude Code, allowing you to use Claude Cod
 
 ## Version
 
-**Current Version:** 2.2.0
-- **Interactive Landing Page:** API explorer at root URL with live endpoint testing
-- **Anthropic Messages API:** Native `/v1/messages` endpoint alongside OpenAI format
-- **Explicit Auth Selection:** New `CLAUDE_AUTH_METHOD` env var for auth control
-- **Tool Execution Fix:** `enable_tools: true` now properly enables Claude Code tools
+**Current Version:** 2.3.0
+- **Live `/v1/models` discovery:** When `ANTHROPIC_API_KEY` is set, the wrapper fetches Anthropic's live model list (cached) instead of serving the static fallback
+- **Dynamic default Sonnet:** `DEFAULT_MODEL` resolves to the latest Sonnet at startup when `ANTHROPIC_API_KEY` is configured; falls back to `claude-sonnet-4-6` otherwise
+- **Operator overrides:** New `CLAUDE_MODELS_OVERRIDE`, `FAST_MODEL`, and `MODEL_LIST_*` env vars
+- **Updated catalog:** Claude 4.6 family added to the static fallback list
 
 **Upgrading from v1.x?**
 1. Pull latest code: `git pull origin main`
